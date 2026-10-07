@@ -1,19 +1,51 @@
-create mode 100644 src/practicajpa/entidades/Persona.java
-PS C:\Users\medel\Documents\NetBeansProjects\PracticaJPA> git branch -M maingit remote add origin https://github.com/alfremedel/JPA.git
-fatal: too many arguments for a rename operation
-PS C:\Users\medel\Documents\NetBeansProjects\PracticaJPA> git push -u origin maingit remote add origin https://github.com/alfremedel/JPA.git
-fatal: invalid refspec 'https://github.com/alfremedel/JPA.git'
-PS C:\Users\medel\Documents\NetBeansProjects\PracticaJPA> git branch -M main
-PS C:\Users\medel\Documents\NetBeansProjects\PracticaJPA> git remote add origin https://github.com/alfremedel/JPA.git
-PS C:\Users\medel\Documents\NetBeansProjects\PracticaJPA> git push -u origin main
-Enumerating objects: 50, done.
-Counting objects: 100% (50/50), done.
-Delta compression using up to 16 threads
-Compressing objects: 100% (41/41), done.
-Writing objects: 100% (50/50), 9.48 MiB | 276.00 KiB/s, done.
-Total 50 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
-remote: Resolving deltas: 100% (2/2), done.
-To https://github.com/alfremedel/JPA.git
- * [new branch]      main -> main
-branch 'main' set up to track 'origin/main'.
-PS C:\Users\medel\Documents\NetBeansProjects\PracticaJPA>
+# PracticaJPA - Sistema de Gestión de Personas con JPA y Swing
+
+Proyecto académico desarrollado en Java utilizando **JPA (Java Persistence API)** y **Hibernate** como proveedor de persistencia para interactuar con una base de datos **MySQL**, incorporando una interfaz gráfica con **Java Swing**.
+
+---
+
+## 🚀 Características
+
+* **Persistencia con JPA**: Mapeo objeto-relacional (ORM) con anotaciones `@Entity` y `@Table` para la gestión de datos.
+* **Patrón DAO (Data Access Object)**: Separación clara de la lógica de acceso a datos mediante `PersonaDao` y `PersonaDaoImpl`.
+* **Interfaz Gráfica Swing**: Módulo visual interactivo (`VentanaPersonal`) para listar y visualizar en tiempo real los datos registrados en la base de datos.
+* **Arquitectura Modular**: Organización por paquetes (`dao`, `entidades`, `main`).
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+* **Lenguaje**: Java (JDK 8+)
+* **IDE**: NetBeans IDE
+* **ORM**: JPA / Hibernate
+* **Base de Datos**: MySQL (`bd_practica`)
+* **GUI**: Java Swing (`JFrame`, `JTable`)
+
+---
+
+## 🗄️ Estructura de la Base de Datos
+
+La aplicación interactúa con la base de datos `bd_practica` y la tabla `persona`:
+
+```sql
+CREATE DATABASE IF NOT EXISTS bd_practica;
+USE bd_practica;
+
+CREATE TABLE IF NOT EXISTS persona (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    correo VARCHAR(100) NOT NULL
+);
+PracticaJPA/
+ ├── src/
+ │    ├── META-INF/
+ │    │    └── persistence.xml         # Configuración de JPA y la unidad de persistencia PracticaPU
+ │    └── practicajpa/
+ │         ├── VentanaPersonal.java    # Interfaz gráfica principal Swing
+ │         ├── dao/
+ │         │    ├── PersonaDao.java     # Interfaz DAO
+ │         │    └── PersonaDaoImpl.java # Implementación DAO con EntityManager
+ │         ├── entidades/
+ │         │    └── Persona.java        # Entidad JPA
+ │         └── main/
+ └── README.md
