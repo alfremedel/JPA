@@ -23,6 +23,8 @@ Proyecto académico desarrollado en Java utilizando **JPA (Java Persistence API)
 
 ---
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/alfremedel/jpa)
+
 ## 🗄️ Estructura de la Base de Datos
 
 La aplicación interactúa con la base de datos `bd_practica` y la tabla `persona`:
